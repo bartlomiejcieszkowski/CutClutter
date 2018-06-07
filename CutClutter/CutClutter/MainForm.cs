@@ -6,7 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-namespace PictureSortingBin
+namespace CutClutter
 {
 	public partial class MainForm : Form
 	{

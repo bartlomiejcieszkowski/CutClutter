@@ -1,4 +1,4 @@
-﻿namespace PictureSortingBin
+﻿namespace CutClutter
 {
 	partial class MainForm
 	{
@@ -50,9 +50,9 @@
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxView)).BeginInit();
 			this.SuspendLayout();
-			// 
+			//
 			// tableLayoutPanel1
-			// 
+			//
 			this.tableLayoutPanel1.ColumnCount = 6;
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -81,9 +81,9 @@
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 561);
 			this.tableLayoutPanel1.TabIndex = 0;
-			// 
+			//
 			// buttonLeftBin
-			// 
+			//
 			this.buttonLeftBin.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.buttonLeftBin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.buttonLeftBin.Location = new System.Drawing.Point(0, 0);
@@ -94,9 +94,9 @@
 			this.buttonLeftBin.Text = "Select left bin";
 			this.buttonLeftBin.UseVisualStyleBackColor = true;
 			this.buttonLeftBin.Click += new System.EventHandler(this.buttonLeftBin_Click);
-			// 
+			//
 			// buttonRightBin
-			// 
+			//
 			this.buttonRightBin.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.buttonRightBin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.buttonRightBin.Location = new System.Drawing.Point(624, 0);
@@ -107,9 +107,9 @@
 			this.buttonRightBin.Text = "Select right bin";
 			this.buttonRightBin.UseVisualStyleBackColor = true;
 			this.buttonRightBin.Click += new System.EventHandler(this.buttonRightBin_Click);
-			// 
+			//
 			// labelCurrentFile
-			// 
+			//
 			this.labelCurrentFile.AutoSize = true;
 			this.tableLayoutPanel1.SetColumnSpan(this.labelCurrentFile, 2);
 			this.labelCurrentFile.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -120,9 +120,9 @@
 			this.labelCurrentFile.TabIndex = 6;
 			this.labelCurrentFile.Text = "None";
 			this.labelCurrentFile.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-			// 
+			//
 			// labelRightBin
-			// 
+			//
 			this.labelRightBin.AutoSize = true;
 			this.tableLayoutPanel1.SetColumnSpan(this.labelRightBin, 2);
 			this.labelRightBin.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -132,9 +132,9 @@
 			this.labelRightBin.Size = new System.Drawing.Size(232, 20);
 			this.labelRightBin.TabIndex = 7;
 			this.labelRightBin.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-			// 
+			//
 			// labelLeftBin
-			// 
+			//
 			this.labelLeftBin.AutoSize = true;
 			this.tableLayoutPanel1.SetColumnSpan(this.labelLeftBin, 2);
 			this.labelLeftBin.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -144,9 +144,9 @@
 			this.labelLeftBin.Size = new System.Drawing.Size(228, 20);
 			this.labelLeftBin.TabIndex = 8;
 			this.labelLeftBin.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-			// 
+			//
 			// buttonSource
-			// 
+			//
 			this.tableLayoutPanel1.SetColumnSpan(this.buttonSource, 4);
 			this.buttonSource.ContextMenuStrip = this.contextMenuStrip1;
 			this.buttonSource.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -159,39 +159,39 @@
 			this.buttonSource.Text = "Select source";
 			this.buttonSource.UseVisualStyleBackColor = true;
 			this.buttonSource.Click += new System.EventHandler(this.buttonSource_Click);
-			// 
+			//
 			// contextMenuStrip1
-			// 
+			//
 			this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.advancedToolStripMenuItem});
 			this.contextMenuStrip1.Name = "contextMenuStrip1";
 			this.contextMenuStrip1.Size = new System.Drawing.Size(128, 26);
-			// 
+			//
 			// advancedToolStripMenuItem
-			// 
+			//
 			this.advancedToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.imagesonlyToolStripMenuItem,
             this.allfilesToolStripMenuItem});
 			this.advancedToolStripMenuItem.Name = "advancedToolStripMenuItem";
 			this.advancedToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
 			this.advancedToolStripMenuItem.Text = "Advanced";
-			// 
+			//
 			// imagesonlyToolStripMenuItem
-			// 
+			//
 			this.imagesonlyToolStripMenuItem.Name = "imagesonlyToolStripMenuItem";
-			this.imagesonlyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.imagesonlyToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
 			this.imagesonlyToolStripMenuItem.Text = "Images only";
 			this.imagesonlyToolStripMenuItem.Click += new System.EventHandler(this.imagesonlyToolStripMenuItem_Click);
-			// 
+			//
 			// allfilesToolStripMenuItem
-			// 
+			//
 			this.allfilesToolStripMenuItem.Name = "allfilesToolStripMenuItem";
-			this.allfilesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.allfilesToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
 			this.allfilesToolStripMenuItem.Text = "All files";
 			this.allfilesToolStripMenuItem.Click += new System.EventHandler(this.allfilesToolStripMenuItem_Click);
-			// 
+			//
 			// panel1
-			// 
+			//
 			this.tableLayoutPanel1.SetColumnSpan(this.panel1, 6);
 			this.panel1.Controls.Add(this.pictureBoxView);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -200,9 +200,9 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(784, 481);
 			this.panel1.TabIndex = 10;
-			// 
+			//
 			// pictureBoxView
-			// 
+			//
 			this.pictureBoxView.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.pictureBoxView.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pictureBoxView.Location = new System.Drawing.Point(0, 0);
@@ -212,9 +212,9 @@
 			this.pictureBoxView.TabIndex = 0;
 			this.pictureBoxView.TabStop = false;
 			this.pictureBoxView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxView_MouseClick);
-			// 
+			//
 			// checkBoxLeft
-			// 
+			//
 			this.checkBoxLeft.AutoSize = true;
 			this.checkBoxLeft.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.checkBoxLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -226,9 +226,9 @@
 			this.checkBoxLeft.Text = "Copy only";
 			this.checkBoxLeft.UseVisualStyleBackColor = true;
 			this.checkBoxLeft.CheckedChanged += new System.EventHandler(this.checkBoxLeft_CheckedChanged);
-			// 
+			//
 			// checkBoxRight
-			// 
+			//
 			this.checkBoxRight.AutoSize = true;
 			this.checkBoxRight.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.checkBoxRight.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -241,9 +241,9 @@
 			this.checkBoxRight.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.checkBoxRight.UseVisualStyleBackColor = true;
 			this.checkBoxRight.CheckedChanged += new System.EventHandler(this.checkBoxRight_CheckedChanged);
-			// 
+			//
 			// labelInfo
-			// 
+			//
 			this.labelInfo.AutoSize = true;
 			this.tableLayoutPanel1.SetColumnSpan(this.labelInfo, 2);
 			this.labelInfo.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -253,11 +253,11 @@
 			this.labelInfo.TabIndex = 13;
 			this.labelInfo.Text = "label1";
 			this.labelInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
+			//
 			// MainForm
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			//
+			this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
 			this.ClientSize = new System.Drawing.Size(784, 561);
 			this.Controls.Add(this.tableLayoutPanel1);
 			this.KeyPreview = true;

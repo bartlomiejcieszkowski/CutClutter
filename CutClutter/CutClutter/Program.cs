@@ -2,7 +2,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace PictureSortingBin
+namespace CutClutter
 {
 	static class Program
 	{

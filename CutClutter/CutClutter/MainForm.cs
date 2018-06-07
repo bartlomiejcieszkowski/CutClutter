@@ -100,6 +100,7 @@ namespace CutClutter
 
 		private void BeginContest()
 		{
+			labelInfo.Text = "";
 			if (String.IsNullOrWhiteSpace(m_SourcePath))
 			{
 				return;
@@ -136,9 +137,6 @@ namespace CutClutter
 
 		private void ChangeButtonStates()
 		{
-			//buttonRightMove.Enabled = (m_RightPath != String.Empty) && (currentFile != String.Empty);
-			//buttonLeftMove.Enabled = (m_LeftPath != String.Empty) && (currentFile != String.Empty);
-			//buttonSourceNoMove.Enabled = (m_SourcePath != String.Empty) && (currentFile != String.Empty);
 			labelCurrentFile.Text = currentFile;
 			labelLeftBin.Text = m_LeftPath;
 			labelRightBin.Text = m_RightPath;
@@ -208,6 +206,11 @@ namespace CutClutter
 
 		private void PictureBoxView_MouseClick(object sender, MouseEventArgs e)
 		{
+			if (e.Button != MouseButtons.Left)
+			{
+				return;
+			}
+
 			var point = new Point(e.X, e.Y);
 			Rectangle rect;
 
@@ -231,13 +234,21 @@ namespace CutClutter
 				}
 			}
 
-			if ((m_SourcePath != String.Empty) && (currentFile != String.Empty))
+			if (m_SourcePath != String.Empty)
 			{
-				rect = new Rectangle(buttonSource.Bounds.X, pictureBoxView.Bounds.Y, buttonSource.Bounds.Width, pictureBoxView.Bounds.Height);
-				if (rect.Contains(point))
+				if (currentFile != String.Empty)
 				{
-					ActionNextImage();
-					return;
+					rect = new Rectangle(buttonSource.Bounds.X, pictureBoxView.Bounds.Y, buttonSource.Bounds.Width, pictureBoxView.Bounds.Height);
+					if (rect.Contains(point))
+					{
+						ActionNextImage();
+						return;
+					}
+				}
+				else
+				{
+					// end, lets restart
+					BeginContest();
 				}
 			}
 		}

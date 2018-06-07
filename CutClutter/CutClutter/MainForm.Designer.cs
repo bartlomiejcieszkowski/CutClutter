@@ -163,15 +163,15 @@
 			// contextMenuStrip1
 			//
 			this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.advancedToolStripMenuItem});
+			this.advancedToolStripMenuItem});
 			this.contextMenuStrip1.Name = "contextMenuStrip1";
 			this.contextMenuStrip1.Size = new System.Drawing.Size(128, 26);
 			//
 			// advancedToolStripMenuItem
 			//
 			this.advancedToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.imagesonlyToolStripMenuItem,
-            this.allfilesToolStripMenuItem});
+			this.imagesonlyToolStripMenuItem,
+			this.allfilesToolStripMenuItem});
 			this.advancedToolStripMenuItem.Name = "advancedToolStripMenuItem";
 			this.advancedToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
 			this.advancedToolStripMenuItem.Text = "Advanced";

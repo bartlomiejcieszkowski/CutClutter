@@ -189,6 +189,7 @@ namespace CutClutter
 					break;
 			}
 		}
+
 		private void MoveFile(string targetPath, bool copy)
 		{
 			var targetFile = Path.Combine(targetPath, Path.GetFileName(currentFile));
@@ -264,6 +265,7 @@ namespace CutClutter
 
 			return String.Empty;
 		}
+
 		private bool SelectNextFile()
 		{
 			while (currentEnumerator.MoveNext())

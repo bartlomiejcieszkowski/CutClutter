@@ -93,7 +93,7 @@
 			this.buttonLeftBin.TabIndex = 3;
 			this.buttonLeftBin.Text = "Select left bin";
 			this.buttonLeftBin.UseVisualStyleBackColor = true;
-			this.buttonLeftBin.Click += new System.EventHandler(this.buttonLeftBin_Click);
+			this.buttonLeftBin.Click += new System.EventHandler(this.ButtonLeftBin_Click);
 			//
 			// buttonRightBin
 			//
@@ -106,7 +106,7 @@
 			this.buttonRightBin.TabIndex = 4;
 			this.buttonRightBin.Text = "Select right bin";
 			this.buttonRightBin.UseVisualStyleBackColor = true;
-			this.buttonRightBin.Click += new System.EventHandler(this.buttonRightBin_Click);
+			this.buttonRightBin.Click += new System.EventHandler(this.ButtonRightBin_Click);
 			//
 			// labelCurrentFile
 			//
@@ -158,7 +158,7 @@
 			this.buttonSource.TabIndex = 9;
 			this.buttonSource.Text = "Select source";
 			this.buttonSource.UseVisualStyleBackColor = true;
-			this.buttonSource.Click += new System.EventHandler(this.buttonSource_Click);
+			this.buttonSource.Click += new System.EventHandler(this.ButtonSource_Click);
 			//
 			// contextMenuStrip1
 			//
@@ -181,14 +181,14 @@
 			this.imagesonlyToolStripMenuItem.Name = "imagesonlyToolStripMenuItem";
 			this.imagesonlyToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
 			this.imagesonlyToolStripMenuItem.Text = "Images only";
-			this.imagesonlyToolStripMenuItem.Click += new System.EventHandler(this.imagesonlyToolStripMenuItem_Click);
+			this.imagesonlyToolStripMenuItem.Click += new System.EventHandler(this.ImagesonlyToolStripMenuItem_Click);
 			//
 			// allfilesToolStripMenuItem
 			//
 			this.allfilesToolStripMenuItem.Name = "allfilesToolStripMenuItem";
 			this.allfilesToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
 			this.allfilesToolStripMenuItem.Text = "All files";
-			this.allfilesToolStripMenuItem.Click += new System.EventHandler(this.allfilesToolStripMenuItem_Click);
+			this.allfilesToolStripMenuItem.Click += new System.EventHandler(this.AllfilesToolStripMenuItem_Click);
 			//
 			// panel1
 			//
@@ -211,7 +211,7 @@
 			this.pictureBoxView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBoxView.TabIndex = 0;
 			this.pictureBoxView.TabStop = false;
-			this.pictureBoxView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxView_MouseClick);
+			this.pictureBoxView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PictureBoxView_MouseClick);
 			//
 			// checkBoxLeft
 			//
@@ -225,7 +225,7 @@
 			this.checkBoxLeft.TabIndex = 11;
 			this.checkBoxLeft.Text = "Copy only";
 			this.checkBoxLeft.UseVisualStyleBackColor = true;
-			this.checkBoxLeft.CheckedChanged += new System.EventHandler(this.checkBoxLeft_CheckedChanged);
+			this.checkBoxLeft.CheckedChanged += new System.EventHandler(this.CheckBoxLeft_CheckedChanged);
 			//
 			// checkBoxRight
 			//
@@ -240,7 +240,7 @@
 			this.checkBoxRight.Text = "Copy only";
 			this.checkBoxRight.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.checkBoxRight.UseVisualStyleBackColor = true;
-			this.checkBoxRight.CheckedChanged += new System.EventHandler(this.checkBoxRight_CheckedChanged);
+			this.checkBoxRight.CheckedChanged += new System.EventHandler(this.CheckBoxRight_CheckedChanged);
 			//
 			// labelInfo
 			//

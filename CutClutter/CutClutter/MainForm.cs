@@ -21,7 +21,6 @@ namespace CutClutter
 
 			ChangeButtonStates();
 
-
 			Text = $"{Application.ProductName} v{Application.ProductVersion}";
 			KeyPress += MainForm_KeyPress;
 			FormClosed += MainForm_FormClosed;
@@ -48,15 +47,14 @@ namespace CutClutter
 				case 'd':
 					ActionMoveFile(m_RightPath, m_CopyModeRight);
 					break;
-
 			}
 		}
 
-		string m_SourcePath = String.Empty;
-		string m_LeftPath = String.Empty;
-		string m_RightPath = String.Empty;
+		private string m_SourcePath = String.Empty;
+		private string m_LeftPath = String.Empty;
+		private string m_RightPath = String.Empty;
 
-		private string selectFolder(string lastFolder)
+		private string SelectFolder(string lastFolder)
 		{
 			CommonOpenFileDialog openFileDialog = new CommonOpenFileDialog()
 			{
@@ -88,17 +86,17 @@ namespace CutClutter
 			ChangeButtonStates();
 		}
 
-		private void buttonSource_Click(object sender, EventArgs e)
+		private void ButtonSource_Click(object sender, EventArgs e)
 		{
-			m_SourcePath = selectFolder(Settings.Default.LastDirectorySource);
+			m_SourcePath = SelectFolder(Settings.Default.LastDirectorySource);
 			Settings.Default.LastDirectorySource = m_SourcePath;
 			ChangeButtonStates();
 			BeginContest();
 		}
 
-		IEnumerable<string> currentEnumeration;
-		IEnumerator<string> currentEnumerator;
-		string currentFile = String.Empty;
+		private IEnumerable<string> currentEnumeration;
+		private IEnumerator<string> currentEnumerator;
+		private string currentFile = String.Empty;
 
 		private void BeginContest()
 		{
@@ -135,7 +133,7 @@ namespace CutClutter
 							g.DrawIconUnstretched(icon, rectIcon);
 							g.Flush();
 						}
-						ApplyTextToCenter($"{ currentEnumerator.Current}", FontStyle.Bold, FontFamily.GenericMonospace.Name, 12, ref bmpFile);
+						ApplyTextToCenter(currentEnumerator.Current, FontStyle.Bold, FontFamily.GenericMonospace.Name, 12, ref bmpFile);
 
 						pictureBoxView.Image = bmpFile;
 						currentFile = currentEnumerator.Current;
@@ -160,7 +158,7 @@ namespace CutClutter
 			return false;
 		}
 
-		void ApplyTextToCenter(string text, FontStyle style, string fontName, float emSize, ref Bitmap targetBmp)
+		private void ApplyTextToCenter(string text, FontStyle style, string fontName, float emSize, ref Bitmap targetBmp)
 		{
 			var g = Graphics.FromImage(targetBmp);
 			g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
@@ -177,7 +175,7 @@ namespace CutClutter
 			g.Flush();
 		}
 
-			HashSet<string> extensions = new HashSet<string>()
+		private readonly HashSet<string> extensions = new HashSet<string>()
 		{
 			".jpg",
 			".gif",
@@ -187,22 +185,22 @@ namespace CutClutter
 			".png"
 		};
 
-		private void buttonRightBin_Click(object sender, EventArgs e)
+		private void ButtonRightBin_Click(object sender, EventArgs e)
 		{
-			m_RightPath = selectFolder(Settings.Default.LastDirectoryRight);
+			m_RightPath = SelectFolder(Settings.Default.LastDirectoryRight);
 			Settings.Default.LastDirectoryRight = m_RightPath;
 			ChangeButtonStates();
 		}
 
-		private void buttonLeftBin_Click(object sender, EventArgs e)
+		private void ButtonLeftBin_Click(object sender, EventArgs e)
 		{
-			m_LeftPath = selectFolder(Settings.Default.LastDirectoryLeft);
+			m_LeftPath = SelectFolder(Settings.Default.LastDirectoryLeft);
 			Settings.Default.LastDirectoryLeft = m_LeftPath;
 			ChangeButtonStates();
 		}
 
-		bool m_CopyModeLeft = false;
-		bool m_CopyModeRight = false;
+		private bool m_CopyModeLeft = false;
+		private bool m_CopyModeRight = false;
 
 		private void ChangeButtonStates()
 		{
@@ -234,7 +232,6 @@ namespace CutClutter
 				File.Move(currentFile, targetFile);
 				labelInfo.Text = $"{currentFile} -(Move)-> {targetFile}";
 			}
-
 		}
 
 		private void ActionMoveFile(string target, bool copy)
@@ -250,8 +247,7 @@ namespace CutClutter
 			}
 		}
 
-
-		private void pictureBoxView_MouseClick(object sender, MouseEventArgs e)
+		private void PictureBoxView_MouseClick(object sender, MouseEventArgs e)
 		{
 			var point = new Point(e.X, e.Y);
 			Rectangle rect;
@@ -285,28 +281,27 @@ namespace CutClutter
 					return;
 				}
 			}
-
 		}
 
-		private void checkBoxLeft_CheckedChanged(object sender, EventArgs e)
+		private void CheckBoxLeft_CheckedChanged(object sender, EventArgs e)
 		{
 			ChangeButtonStates();
 		}
 
-		private void checkBoxRight_CheckedChanged(object sender, EventArgs e)
+		private void CheckBoxRight_CheckedChanged(object sender, EventArgs e)
 		{
 			ChangeButtonStates();
 		}
 
-		bool m_AllFiles = false;
+		private bool m_AllFiles = false;
 
-		private void imagesonlyToolStripMenuItem_Click(object sender, EventArgs e)
+		private void ImagesonlyToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			m_AllFiles = false;
 			ChangeButtonStates();
 		}
 
-		private void allfilesToolStripMenuItem_Click(object sender, EventArgs e)
+		private void AllfilesToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			m_AllFiles = true;
 			ChangeButtonStates();

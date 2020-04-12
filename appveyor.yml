@@ -1,0 +1,38 @@
+version: 0.0.0.{build}
+
+platform:
+  - Any CPU
+
+configuration:
+  - Debug
+  - Release
+
+init:
+  - ps: >-
+      if ($env:APPVEYOR_REPO_TAG -eq "true")
+      {
+        if ($($env:APPVEYOR_REPO_TAG_NAME.StartsWith("v")))
+        {
+          Update-AppveyorBuild -Version "$($env:APPVEYOR_REPO_TAG_NAME.TrimStart("v"))"
+        }
+      }
+
+assembly_info:
+  patch: true
+  file: '**\AssemblyInfo.*'
+  assembly_version: '{version}'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '{version}'
+
+artifacts:
+  - path: CutClutter\out\$(configuration)\*
+
+deploy:
+  provider: GitHub
+  auth_token:
+    secure: IJ/yJ7E+uu991AlCS7lCiiq0T9XJeze+yQR1ht1PlNxzfYi+G4XXPcl84d8FJLN+
+  draft: true
+  force_update: true
+  on:
+    APPVEYOR_REPO_TAG: true
+

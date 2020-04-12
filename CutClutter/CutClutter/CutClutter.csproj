@@ -129,20 +129,21 @@
       $(PostBuildEventDependsOn);
       PostBuildMacros;
     </PostBuildEventDependsOn>
-    <PostBuildEvent>xcopy "$(TargetDir)*" "$(SolutionDir)out\$(SolutionName)\$(SolutionName)\" /s /e /y /i
-set WA_OutputFileName=$(SolutionName)_@(VersionNumber)
+    <PostBuildEvent>xcopy "$(TargetDir)*" "$(SolutionDir)out\$(Configuration)\pack\$(ProjectName)\" /s /e /y /i
+set WA_OutputFileName=$(ProjectName)_@(VersionNumber)
 if $(Configuration) == Debug (
 set WA_OutputFileName=%25WA_OutputFileName%25_$(Configuration)
 )
 if $(Configuration) == Release (
-copy "$(SolutionDir)out\$(SolutionName)\$(SolutionName)\$(SolutionName).pdb" "$(SolutionDir)out\%25WA_OutputFileName%25.pdb"
-del "$(SolutionDir)out\$(SolutionName)\$(SolutionName)\$(SolutionName).pdb"
+copy "$(SolutionDir)out\$(Configuration)\pack\$(ProjectName)\$(ProjectName).pdb" "$(SolutionDir)out\$(Configuration)\%25WA_OutputFileName%25.pdb"
+del "$(SolutionDir)out\$(Configuration)\pack\$(ProjectName)\$(ProjectName).pdb"
 )
-del /Q "$(SolutionDir)out\%25WA_OutputFileName%25.zip"
-powershell.exe -nologo -noprofile -command "&amp; { Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::CreateFromDirectory('$(SolutionDir)out\$(SolutionName)', '$(SolutionDir)out\%25WA_OutputFileName%25.zip'); }"</PostBuildEvent>
+del /Q "$(SolutionDir)out\$(Configuration)\%25WA_OutputFileName%25.zip"
+powershell.exe -nologo -noprofile -command "&amp; { Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::CreateFromDirectory('$(SolutionDir)out\$(Configuration)\pack', '$(SolutionDir)out\$(Configuration)\%25WA_OutputFileName%25.zip'); }"
+rmdir "$(SolutionDir)out\$(Configuration)\pack" /s /q</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>rmdir "$(SolutionDir)out\$(SolutionName)" /s /q</PreBuildEvent>
+    <PreBuildEvent>rmdir "$(SolutionDir)out\$(Configuration)" /s /q</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
